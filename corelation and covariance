@@ -1,0 +1,12 @@
+#5
+data(iris)
+num_data<-iris[,1:4]
+num_data
+cor_matrix<-cor(num_data)
+cor_matrix
+library(corrplot)
+corrplot(cor_matrix,method="color",addCoef.col="black",tl.col="black",number.cex=0.7)
+anova_model<-aov(Petal.Length~Species,data=iris)
+summary(anova_model)
+ancova_model<-aov(Petal.Length~Sepal.Length+Species,data=iris)
+summary(ancova_model)

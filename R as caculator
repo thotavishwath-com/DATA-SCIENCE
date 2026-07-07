@@ -1,0 +1,146 @@
+#basic datatypes
+a<-45
+class(a)
+b<-67L
+class(b)
+c<-"data"
+class(c)
+d<-45+9i
+class(d)
+e<-TRUE
+class(e)
+
+#Advanced Data Types(Data Structures)
+fruits <- c("banana", "apple", "mango")
+print(fruits)
+numbers <- 1:10
+print(numbers)
+cd<-(20:30)
+print(cd)
+da<-seq(2,15,2)
+print(da)
+vc<-c(3,4,567,89)
+length(vc)
+min(vc)
+max(vc)
+sum(vc)
+mean(vc)
+sort(vc)
+append(vc,90)
+print(vc)
+
+thislist <- list("apple", "banana", "cherry")
+print(thislist)
+
+thismat<-matrix(c(1,2,3,4,5,6),nrow=3,ncol=2)
+thismat
+thismatrix <- matrix(c("apple", "banana", "cherry", "mango"), nrow = 2, ncol = 2)
+thismatrix[1, 2]
+thismatrix[2,]
+thismatrix[,2]
+thismatrix[c(1,2),]
+thismatrix[, c(1,2)]
+
+# Combine matrices
+Matrix1 <- matrix(c("apple", "banana", "cherry", "grape"), nrow = 2, ncol = 2)
+Matrix2 <- matrix(c("guava", "mango", "pineapple", "watermelon"), nrow = 2, ncol = 2)
+# Adding it as a rows
+Matrix_Combined <- rbind(Matrix1, Matrix2)
+Matrix_Combined
+# Adding it as a columns
+Matrix_Combined <- cbind(Matrix1, Matrix2)
+Matrix_Combined
+
+# An array with one dimension with values ranging from 1 to 24
+thisarray <- c(1:24)
+thisarray
+# An array with more than one dimension
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+multiarray
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+2 %in% multiarray
+length(multiarray)
+
+# create dataframe
+dataframe<-data.frame(id=c(34,45,46),name=c('B',"c","s"),age=c(23,45,16))
+dataframe
+dataframe[1]
+dataframe[2]
+dataframe[3]
+dataframe[["age"]]
+dataframe[["name"]]
+dataframe[["id"]]
+dataframe$id
+dataframe$name
+dataframe$age
+
+df<-rbind(dataframe,c(45,'x',15))
+df
+df1<-cbind(df,vote=c('Y','Y','N',"N"))
+df1
+dim(df1)
+ncol(df1)
+nrow(df1)
+df1[1:3,2:3]  
+df1[3:4,3:4]
+df1[2:3,]
+df1[,2:3]
+
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+music_genre
+levels(music_genre)
+length(music_genre)
+music_genre[3]
+music_genre[3] <- "Pop"
+music_genre[3]
+
+
+
+
+
+# display the string using print() function()
+print("Data Science")
+#display the string using cat() function()
+cat("Data science")
+# Assign the value to variable using two operators(<-,=)
+a<-5
+print(a)
+d=5
+d
+56->t
+T
+# same value assign the multiple variables
+x<-y<-z<-p<-q<-r<-10
+x
+y
+z
+p
+q
+r
+#Arithmetic Operations
+1+3
+5-3
+4*4
+15/5
+15%/%5
+#mathematical functions
+abs(4-9)
+sqrt(16)
+3^4
+exp(2)
+pi
+2*pi*2
+log(10)
+log2(10)
+log10(10)
+log(2,10)
+sin(90)
+cos(90)
+tan(90)
+cat(90)
+factorial(4)
+min(89,78,65,45)
+max(65,-78,54)
+sum(2,3,4)

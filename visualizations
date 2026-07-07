@@ -1,0 +1,30 @@
+#a
+df<-data.frame(
+  id=c(1,2,3,4,5,6,7,8,9,10),
+  name=c('s1','s2','s3','s4','s5','s6','s7','s8','s9','s10'),
+  age=c(19,29,15,21,23,17,16,18,15,20),
+  sleep_hrs=c(6,7,4,5,6,7,8,9,6,7),
+  study_hrs=c(5,4,4,6,3,2,1,2,4,3),
+  play_hrs=c(2,3,8,4,2,5,6,3,4,1),
+  gender=c('f','m','m','m','f','f','f','m','m','f'),
+  result=c('p','p','p','p','f','f','f','f','p','p')
+)
+print(df)
+boxplot(df$age)
+boxplot(df$age,col="red",main="age dist using boxplot",ylab="Age")
+boxplot(df$age,col="orange",main="boxplot for age variable",ylab="ages")
+boxplot(df$sleep_hrs,col="orange",main="boxplot for sleeping hours variable",ylab="sleeping hours")
+plot(df$sleep_hrs,df$age,xlab="sleeping hours",ylab="age",main="scatter age and sleeping hours",col=c('red','green'),cex=4,pch=20)
+
+#b
+library('scatterplot3d')
+scatterplot3d(df$sleep_hrs,df$study_hrs,df$play_hrs,xlab="sleeping hours")
+
+#c
+barplot(df$age,names.arg=(df$name),col='red',ylab='age',xlab='student name',main='barplot for student ages')
+barplot(df$age,col='green',ylab='age',names.arg=(df$name))
+barplot(df$sleep_hrs,names.arg=(df$name),ylab='sleeping hours',col='red')
+pie(df$play_hrs,label=df$name,main='pie chart for student playing hrs',col=c('red','orange','yellow','blue','green','pink','black','white'))
+summary(df$age)
+
+hist(df$age,col='green',xlab='ages',main='histogram for age variable',border='red')

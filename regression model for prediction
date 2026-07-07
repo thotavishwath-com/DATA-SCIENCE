@@ -1,0 +1,67 @@
+#8. Regression model for prediction
+#Create dataset
+x<-c(1,2,3,4,5)
+y<-c(1.2,1.8,2.6,3.2,3.8)
+# Create Linear Regression Model and Trained Model
+lr<-lm(y~x)
+
+#test data(x=7) convert into data frame
+w7<-data.frame(x=7)
+# predict the test data
+prdct_w7<-predict(lr,w7)
+print(prdct_w7)
+
+#test data(x=8) convert into data frame
+w8<-data.frame(x=8)
+prdct_w8<-predict(lr,w8)
+print(prdct_w8)
+
+#test data(x=12) convert into data frame
+w12<-data.frame(x=12)
+prdct_w12<-predict(lr,w12)
+print(prdct_w12)
+
+#test data(x=11) convert into data frame
+w11<-data.frame(x=11)
+prdct_w11<-predict(lr,w11)
+print(prdct_w11)
+
+#test data(x=9) convert into data frame
+w9<-data.frame(x=9)
+prdct_w9<-predict(lr,w9)
+print(prdct_w9)
+
+#test data(x=10) convert into data frame
+w10<-data.frame(x=10)
+prdct_w10<-predict(lr,w10)
+print(prdct_w10)
+
+
+# train data(x=(1,2,3,4,5)) convert into data frame
+df<-data.frame(c(1,2,3,4,5))
+prdct<-predict(lr,x=df)
+print(prdct)
+
+#create data frame for actual and predictor sales
+df1<-data.frame(Actual_Sales<-y, predicted_sales<-prdct)
+df1
+
+# define test data and predictions for plotting
+test_x <- c(7, 8, 12, 11, 9, 10)
+test_pred <- c(prdct_w7, prdct_w8, prdct_w12, prdct_w11, prdct_w9, prdct_w10)
+
+# Plot actual data with larger x,y limits
+plot(x, y, col = "blue", pch = 16,
+     main = "Linear Regression Line",
+     xlab = "X", ylab = "Y (Sales)",
+     xlim = c(0, 13), ylim = c(0, max(test_pred) + 1))
+
+# Add regression line
+abline(lr, col = "red", lwd = 2)
+
+# Add predicted test points
+points(test_x, test_pred, col = "green", pch = 17)
+
+# Add legend
+legend("topleft", legend = c("Actual Data", "Regression Line", "Predicted Test Data"),
+       col = c("blue", "red", "green"), pch = c(16, NA, 17), lty = c(NA, 1, NA))

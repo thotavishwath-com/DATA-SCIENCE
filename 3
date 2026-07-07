@@ -1,0 +1,41 @@
+#3
+#a
+
+datatxt<-read.table("C:/Users/nosha/Downloads/data science/iris.txt")
+print(datatxt)
+
+DF<-read.csv("C:/Users/nosha/Downloads/data science/Iris.csv")
+head(DF,3)
+dim(DF)
+tail(DF)
+colnames(DF)
+
+
+library("rvest")
+link="https://en.wikipedia.org/wiki/List_of_highest-grossing_films"
+page<-read_html(link)
+print(page)
+alltables<-page %>% html_table(fill=TRUE)
+table1<-alltables[1]
+table1
+table2<-alltables[2]
+table2
+table3<-alltables[3]
+table3
+
+#b reading excel datasheet in R
+
+library("readxl")
+data1<-read_excel("C:/Users/nosha/Downloads/data science/Iris.xlsx")
+data1
+dim(data1)
+colnames(data1)
+
+
+#c reading xml dataset in R
+library("XML")
+library("methods")
+data<-xmlParse(file="C:/Users/mgit/Downloads/data science 5A4/archive/sample1.xml")
+print(data)
+df<-xmlToDataFrame("C:/Users/mgit/Downloads/data science 5A4/archive/sample1.xml")
+df
